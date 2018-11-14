@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocked | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<!--- HEADER --->
+    <div class="header">
+        <a class="logo-banner" href="{% url 'index' %}"><img src="{% static 'img/logo2.svg' %}"></a>
+        <div class="header-right">
+            <img src="{% static 'img/profile-male.png' %}" >
+            <p>{{ user.username }}</p>
+            <div class="user-details">
+                <a href="#">Settings</a>
+                <a href="{% url 'logout' %}">logout</a>
+            </div>
+        </div>
+    </div>
+<!--- END HEADER --->
+<!--- LEFT COLUMN --->
+    <div class="leftcolumn">
+        <div class="leftcolumn-container">
+            <p class="leftcolumn-greeting">Hi, {{ user.username }}</p>
+        </div>
+    </div>
+<!--- END LEFT COLUMN --->
+<!--- RIGHT COLUMN --->
+    <div class="rightcolumn">
+        <div class="box">
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input type="search" id="search" placeholder="Enter ticker or company name" />
+            </div>
+        </div>
+    </div>
+<!--- END RIGHT COLUMN --->
+
+</body>
+</html>

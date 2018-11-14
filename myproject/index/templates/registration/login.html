@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Stocked | Login</title>
+</head>
+<body>
+    <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo2.svg' %}"></a>
+    </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" autofocus required maxlength="254" id="id_username" placeholder="Username or email"/>
+            <input type="password" name="password" required id="id_password" placeholder="Password"/><br>
+            <button class="submit-btn" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

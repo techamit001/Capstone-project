@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <title>Stocked | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="header">
+        <a class="logo-banner" href="{% url 'index' %}"><img src="{% static 'img/logo2.svg' %}"></a>
+        <div class="header-right">
+            <a href="{% url 'login' %}" style="color: white">Log in</a>
+            <a href="#" style="border:2px solid #37bedd;">Sign Up</a>
+        </div>
+    </div>
+    <div>
+    </div>
+</body>
+
+</html>

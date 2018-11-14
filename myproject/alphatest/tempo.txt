@@ -1,0 +1,44 @@
+
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+import requests
+import json
+import pprint
+
+
+
+API_URL = "https://api.iextrading.com/1.0/stock/market/batch"
+data = {
+	"symbols" : "MSFT",
+	"types" : "chart",
+	"range" : "1d"
+}
+
+def index(request):
+	name = 'Jay'
+	return render(request, "index/alpha.html", {'name' : name, 'page': printData()})
+
+def printData():
+	response = requests.get(API_URL, params = data)
+	resdata = response.json()
+	print(("DATE\tTIME\tOPEN\tHIGH\tLOW\tCLOSE\tVOLUME").expandtabs(20))
+	for i in resdata["MSFT"]["chart"]:
+		if i["volume"] == 0:
+			print((
+					str(i["date"]) + "\t" +
+					str(i["label"]) + "\t\t" +
+					str(i["high"]) + "\t" +
+					str(i["low"]) + "\t\t" +
+					str(i["volume"])
+				).expandtabs(20))
+		else:
+			print((
+					str(i["date"]) + "\t" +
+					str(i["label"]) + "\t" +
+					str(i["open"]) + "\t" +
+					str(i["high"]) + "\t" +
+					str(i["low"]) + "\t" +
+					str(i["close"]) + "\t" +
+					str(i["volume"])
+				).expandtabs(20))

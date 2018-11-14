@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<title> AlphaVantage </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/alphaMain.css' %}" />
+
+</head>
+<body>
+	AlphaVantage
+	<div id="chart_div" style="width: 100%; height: 500px;"></div>
+
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		var chartData = {{newChartData | safe}};
+		google.charts.load('current', {'packages':['corechart']});
+      	google.charts.setOnLoadCallback(drawChart);
+
+  	function drawChart() {
+    	var data = google.visualization.arrayToDataTable(chartData, true);
+
+    	var options = {
+      		legend:'none',
+    	};
+
+    	var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+
+    	chart.draw(data, options);
+  	}
+	</script>
+</body>
+</html>

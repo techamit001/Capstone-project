@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <title>Stocked - Home</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+    <script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+
+    </head>
+<!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
+
+<body data-hijacking="on" data-animation="parallax">
+  <section class="cd-section visible">
+    <div class="container">
+      <div class="col-sm-12 cd-section1-nav">
+        <a class="login-btn" href="#">Login</a>
+        <a class="signup-btn" href="#">SignUp</a>
+      </div>
+      <div class="col-sm-12 cd-section1-brand">
+        <img class="img-responsive cd-section1-brandlogo" src="{% static 'img/logo.svg' %}"></img>
+        <p class="cd-section1-brandname">STOCKED</p>
+        <p class="cd-section1-brandtag">Stock Analysis and Predictions</p>
+      </div>
+      <div style="text-align:center;">
+        <span class="col-sm-12 glyphicon glyphicon-chevron-down" style="padding-top:60px;"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cd-section">
+    <div>
+      <img class="img-responsive" src="{% static 'img/sec2-bg.png' %}" style="margin:auto; background-size: cover no-repeat;"></img>
+    </div>
+  </section>
+
+  <section class="cd-section">
+    <div>
+      <h2>Section 3</h2>
+    </div>
+  </section>
+
+  <section class="cd-section">
+    <div>
+      <h2>Section 4</h2>
+    </div>
+  </section>
+
+  <section class="cd-section">
+    <div>
+      <h2>Section 5</h2>
+    </div>
+  </section>
+
+  <nav>
+    <ul class="cd-vertical-nav">
+      <li><a href="#0" class="cd-prev inactive">Next</a></li>
+      <li><a href="#0" class="cd-next">Prev</a></li>
+    </ul>
+  </nav> <!-- .cd-vertical-nav -->
+<script src="{% static 'js/jquery-2.1.4.js' %}"></script>
+<script src="{% static 'js/velocity.min.js' %}"></script>
+<script src="{% static 'js/velocity.ui.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
+</body>
+</html>
