@@ -24,21 +24,36 @@
 <!--- END HEADER --->
 <!--- LEFT COLUMN --->
     <div class="leftcolumn">
-        <div class="leftcolumn-container">
-            <p class="leftcolumn-greeting">Hi, {{ user.username }}</p>
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_1f8f2"></div>
+   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 1366,
+  "height": 610,
+  "symbol": "NSE:NIFTY",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "Dark",
+  "style": "1",
+  "locale": "in",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "hide_legend": true,
+  "allow_symbol_change": true,
+  "save_image": false,
+  "details": true,
+  "container_id": "tradingview_1f8f2"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
         </div>
-    </div>
 <!--- END LEFT COLUMN --->
-<!--- RIGHT COLUMN --->
-    <div class="rightcolumn">
-        <div class="box">
-            <div class="container-1">
-                <span class="icon"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="Enter ticker or company name" />
-            </div>
-        </div>
-    </div>
-<!--- END RIGHT COLUMN --->
+
 
 </body>
 </html>
